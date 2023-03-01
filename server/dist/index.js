@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const http_1 = __importDefault(require("http"));
 const socket_io_1 = require("socket.io");
 const cors_1 = __importDefault(require("cors"));
-// import { roomHandler } from "./room";
+const index_1 = require("./room/index");
 const app = (0, express_1.default)();
 app.use(cors_1.default);
 const port = 8080;
@@ -20,7 +20,7 @@ const io = new socket_io_1.Server(server, {
 });
 io.on("connection", (socket) => {
     console.log("a user connected");
-    // roomHandler(socket);
+    (0, index_1.RoomHandler)(socket);
     socket.on("disconnect", () => {
         console.log("user disconnected");
     });
