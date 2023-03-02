@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
 import SocketIO from 'socket.io-client'
 import JoinButton from './components/JoinButton';
 

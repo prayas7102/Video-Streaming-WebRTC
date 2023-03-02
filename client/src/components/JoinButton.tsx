@@ -4,7 +4,7 @@ import { RoomContext } from '../Context/RoomContext'
 const JoinButton: React.FC = () => {
     const { ws } = useContext(RoomContext)
     const joinRoom = () => {
-        ws.emit("join-room")
+        ws.emit("create-room")
     }
     return (
         <button 
