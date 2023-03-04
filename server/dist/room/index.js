@@ -9,9 +9,9 @@ const RoomHandler = (socket) => {
         socket.emit("room-created", { roomId });
         console.log("user created the room");
     });
-    socket.on("join-room", ({ roomId }) => {
+    socket.on("join-room", (roomId) => {
         console.log("user joined the room", roomId);
-        socket.join(roomId);
+        // socket.join(roomId.roomId);
     });
 };
 exports.RoomHandler = RoomHandler;

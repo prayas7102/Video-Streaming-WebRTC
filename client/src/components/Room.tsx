@@ -7,7 +7,8 @@ const Room = () => {
     const { ws } = useContext(RoomContext);
 
     useEffect(()=>{
-        ws.emit("join-room", {id})
+        // console.log(id)
+        ws.emit("join-room", id)
     },[id]);
 
     return (

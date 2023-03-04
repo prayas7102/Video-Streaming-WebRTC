@@ -15,12 +15,12 @@ export const RoomProvider: React.FunctionComponent = ({ children }) => {
   
   const enterRoom = ({ roomId }: { roomId: any }) => {
     console.log({ roomId });
-    navigate(`/room/${roomId}`)
+    navigate(`/room/${roomId}`);
   }
 
   useEffect(() => {
     // when room-created is emitted from backend:
-    ws.on("room-created", enterRoom)
+    ws.on("room-created", enterRoom);
   });
 
   return (<RoomContext.Provider value={{ ws }}>{children}</RoomContext.Provider>)
